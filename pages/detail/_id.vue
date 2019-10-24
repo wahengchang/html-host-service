@@ -10,7 +10,10 @@
       <span class="subInfo flexPush">
         Created At: {{ timestampToDateFormat(roomData.createdAt) }}
       </span>
-      <button class="" @click="onClickSave">save</button>
+      <a class="viewButton" :href="`/views/${roomData.id}`" target="blank">
+        View
+      </a>
+      <button class="" @click="onClickSave">Save</button>
     </div>
     <textarea v-model="roomContent" class="textEditor" />
   </section>
@@ -83,6 +86,13 @@ export default {
 .infoContainer {
   display: flex;
   line-height: 30px;
+}
+.viewButton {
+  text-decoration: none;
+  color: gray;
+  font-style: italic;
+  font-size: 12px;
+  padding: 0 12px;
 }
 .mainTitle {
   font-size: 14px;

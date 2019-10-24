@@ -10,7 +10,15 @@
     <ul v-if="roomList" class="roomListWrapper">
       <li v-for="(item, index) in roomList" :key="index" class="listItem">
         <a :href="`/detail/${item.id}`">{{ item.name }}</a>
-        <button @click="onClickRemoveRoom(item.id)" class="flexPush">X</button>
+
+        <a
+          class="viewButton flexPush"
+          :href="`/views/${item.id}`"
+          target="blank"
+        >
+          View
+        </a>
+        <button @click="onClickRemoveRoom(item.id)" class="">X</button>
       </li>
     </ul>
     <div v-else>
@@ -75,7 +83,7 @@ export default {
   text-align: center;
   flex-direction: column;
   width: 100%;
-  min-width: 600px;
+  max-width: 600px;
   border: lightgray 1px solid;
   padding: 20px 30px;
 }
@@ -98,6 +106,7 @@ export default {
 
 .roomListWrapper {
   margin-top: 20px;
+  width: 100%;
 }
 .listItem {
   display: flex;
@@ -105,5 +114,13 @@ export default {
 }
 .flexPush {
   margin-left: auto;
+}
+
+.viewButton {
+  text-decoration: none;
+  color: gray;
+  font-style: italic;
+  font-size: 12px;
+  padding: 0 12px;
 }
 </style>
