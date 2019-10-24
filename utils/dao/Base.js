@@ -28,6 +28,18 @@ export default class Template {
       .then(() => this.getById(createdKey))
   }
 
+  update(id, payload = {}) {
+    const updatedAt = new Date().getTime()
+
+    return this.ref
+      .child(id)
+      .update({
+        ...payload,
+        updatedAt
+      })
+      .then(() => this.getById(id))
+  }
+
   getById(id) {
     return new Promise(resolve => {
       return this.ref.child(id).once('value', function(snapshot) {

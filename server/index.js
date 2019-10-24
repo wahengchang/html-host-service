@@ -21,6 +21,8 @@ async function start() {
     await nuxt.ready()
   }
 
+  app.use('/views/', require('./routers/views'))
+
   // Give nuxt middleware to express
   app.use(nuxt.render)
 

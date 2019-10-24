@@ -1,59 +1,32 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        html-host-service
-      </h1>
-      <h2 class="subtitle">
-        This is a public page
-      </h2>
-      <div class="links">
-        <a href="/secret" class="button--green">See my secret</a>
-      </div>
-    </div>
-  </section>
+  <div class="container screenCenter">
+    <h3>Free copy paste html hosting!</h3>
+    <a href="/secret">Start</a>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
-  }
+  components: {}
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style scoped>
+.screenCenter {
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+h3 {
+  margin: 20px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+a {
+  text-decoration: none;
+  background: yellow;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 700;
 }
 </style>

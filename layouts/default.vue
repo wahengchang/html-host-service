@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="bodyContainer">
     <header>
       <div class="headerRow">
         <h1>
           <a href="/">
-            Firebase Starter
+            html-host-service
           </a>
         </h1>
         <span>
@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style scoped>
+.bodyContainer {
+  height: 100vh;
+}
 .headerRow {
   padding-top: 5px;
   padding-left: 5px;

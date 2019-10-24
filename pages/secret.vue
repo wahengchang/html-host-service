@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <h1 class="subtitle">Hi {{ _user.displayName }}</h1>
-
-    <div class="row">
-      <span>This is data list: </span>
-      <button @click="onClickAddTemplate" class="addButton">add</button>
+    <div class="row" :style="{ display: flex }">
+      <span class="subtitle">Hi {{ _user.displayName }}</span>
+      <button @click="onClickAddTemplate" class="addButton flexPush">
+        Create
+      </button>
     </div>
 
     <ul v-if="roomList" class="roomListWrapper">
-      <li v-for="(item, index) in roomList" :key="index">
-        <span>{{ item.name }}</span>
-        <button @click="onClickRemoveRoom(item.id)">X</button>
+      <li v-for="(item, index) in roomList" :key="index" class="listItem">
+        <a :href="`/detail/${item.id}`">{{ item.name }}</a>
+        <button @click="onClickRemoveRoom(item.id)" class="flexPush">X</button>
       </li>
     </ul>
     <div v-else>
@@ -74,14 +74,15 @@ export default {
   align-items: center;
   text-align: center;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
+  min-width: 600px;
   border: lightgray 1px solid;
   padding: 20px 30px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 16px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
@@ -93,5 +94,16 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.roomListWrapper {
+  margin-top: 20px;
+}
+.listItem {
+  display: flex;
+  margin: 10px 0;
+}
+.flexPush {
+  margin-left: auto;
 }
 </style>
