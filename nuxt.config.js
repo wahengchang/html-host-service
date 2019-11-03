@@ -21,7 +21,13 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', sizes: '180x180', href: '/site.webmanifest' },
+    ]
   },
 
   /*
@@ -47,6 +53,43 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
   ],
+  pwa: {
+    workbox: {
+    },
+    manifest: {
+      "name": "HackerWeb",
+      "short_name": "HackerWeb",
+      "start_url": ".",
+      "display": "standalone",
+      "background_color": "#222",
+      "description": "A simply readable Hacker News app.",
+      "icons": [{
+        "src": "/android-chrome-192x192",
+        "sizes": "48x48",
+        "type": "image/png"
+      }, {
+        "src": "/android-chrome-192x192",
+        "sizes": "72x72",
+        "type": "image/png"
+      }, {
+        "src": "/android-chrome-192x192",
+        "sizes": "96x96",
+        "type": "image/png"
+      }, {
+        "src": "/android-chrome-192x192",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "/android-chrome-192x192",
+        "sizes": "168x168",
+        "type": "image/png"
+      }, {
+        "src": "/android-chrome-192x192",
+        "sizes": "192x192",
+        "type": "image/png"
+      }]
+    }
+  },
   /*
    ** Axios module configuration
    */
