@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row" :style="{ display: flex }">
-      <span class="subtitle">Hi {{ _user.displayName }}</span>
+      <a class="subtitle" href="/me">Hi {{ _user.displayName }}</a>
       <button @click="onClickAddTemplate" class="addButton flexPush">
         Create
       </button>
